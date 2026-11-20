@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koal-IA · Podcasts y Audio · Ciencia Koala</title>
+  <meta name="description" content="Podcasts y música generada con inteligencia artificial por Josué J.A.S.: CiencIA, CienIA-ficción y Jingling Koala.">
+  <link rel="icon" href="../favicon.png">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/site.js"></script>
+</head>
+<body>
+  <div class="topbar-wrap">
+    <header class="topbar">
+      <a class="brand" href="../">
+        <img src="../assets/img/logo-koala.png" alt="">
+        <span>Ciencia Koala</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a class="nav-link" href="../">
+          <span data-i18n="es">Inicio</span>
+          <span data-i18n="en">Home</span>
+          <span data-i18n="zh">首页</span>
+        </a>
+        <a class="nav-link" href="../#apps">
+          <span data-i18n="es">Apps</span>
+          <span data-i18n="en">Apps</span>
+          <span data-i18n="zh">应用</span>
+        </a>
+        <a class="nav-link active" href="./">
+          <span data-i18n="es">Podcasts</span>
+          <span data-i18n="en">Podcasts</span>
+          <span data-i18n="zh">播客</span>
+        </a>
+        <a class="nav-link" href="../cv/">
+          <span data-i18n="es">CV</span>
+          <span data-i18n="en">Resume</span>
+          <span data-i18n="zh">简历</span>
+        </a>
+      </nav>
+
+      <div class="controls">
+        <div class="lang-group" role="group" aria-label="Idioma">
+          <button class="lang-btn" type="button" data-set-lang="es" aria-pressed="true">ES</button>
+          <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <button class="theme-btn" id="theme-toggle" type="button" aria-label="Cambiar tema">🌙</button>
+      </div>
+    </header>
+  </div>
+
+  <main class="container">
+    <section class="surface-card" style="margin-top: 16px;">
+      <div class="chip-row" style="margin-bottom: 14px;">
+        <span class="chip chip-primary">🎙️ Koal-IA</span>
+      </div>
+      <h1 class="display-title">
+        <span data-i18n="es">Te invito a escuchar 🎙️🐨</span>
+        <span data-i18n="en">Come listen with me 🎙️🐨</span>
+        <span data-i18n="zh">欢迎收听 Koal-IA 🎙️🐨</span>
+      </h1>
+      <p class="muted" style="margin: 14px 0 0; max-width: 62ch; font-size: 1.05rem;">
+        <span data-i18n="es">Proyectos de divulgación científica, relatos de ciencia ficción y música original creados con apoyo de inteligencia artificial.</span>
+        <span data-i18n="en">Science communication, sci-fi storytelling, and original music created with the help of artificial intelligence.</span>
+        <span data-i18n="zh">借助人工智能打造的科学普及播客、科幻故事演绎与原创音乐作品。</span>
+      </p>
+    </section>
+
+    <section class="grid-3" style="margin-top: 24px;">
+      <!-- CiencIA -->
+      <article class="podcast-card">
+        <a href="https://creators.spotify.com/pod/show/jjas" target="_blank" rel="noopener" aria-label="CiencIA en Spotify">
+          <img class="podcast-cover" src="../assets/img/podcast-ciencia.jpg" alt="Portada del podcast CiencIA">
+        </a>
+        <div class="podcast-body">
+          <span class="chip chip-primary" style="align-self: flex-start;">Spotify · Podcast</span>
+          <h2>CiencIA</h2>
+          <p class="podcast-desc-clamped">
+            <span data-i18n="es">Bienvenido a CiencIA, el espacio donde la ciencia se vuelve accesible y emocionante. En cada episodio utilizamos inteligencia artificial para narrar documentos científicos y tesis, permitiendo que el conocimiento llegue a todos sin importar la complejidad técnica o la dificultad de acceso a los textos originales, siempre respetando y dando crédito a los autores originales.</span>
+            <span data-i18n="en">Welcome to CiencIA, the space where science becomes accessible and exciting. In each episode, we use artificial intelligence to narrate scientific papers and theses, helping knowledge reach everyone regardless of technical complexity, always crediting the original authors.</span>
+            <span data-i18n="zh">欢迎来到 CiencIA，在这里科学变得通俗易懂且充满魅力。每一期我们都会使用人工智能朗读科学论文与学位论文，让知识跨越专业门槛触达更多人，并始终尊重和署名原作者。</span>
+          </p>
+          <div class="podcast-actions">
+            <a class="btn btn-filled btn-sm" href="https://creators.spotify.com/pod/show/jjas" target="_blank" rel="noopener">
+              <span data-i18n="es">Escuchar en Spotify</span>
+              <span data-i18n="en">Listen on Spotify</span>
+              <span data-i18n="zh">在 Spotify 收听</span>
+            </a>
+            <button class="btn btn-outlined btn-sm" type="button" data-toggle-desc aria-expanded="false">
+              <span data-i18n="es">Leer más / menos</span>
+              <span data-i18n="en">Read more / less</span>
+              <span data-i18n="zh">展开 / 收起</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CienIA-ficción -->
+      <article class="podcast-card">
+        <a href="https://creators.spotify.com/pod/show/jjas1" target="_blank" rel="noopener" aria-label="CienIA-ficción en Spotify">
+          <img class="podcast-cover" src="../assets/img/podcast-ficcion.jpg" alt="Portada del podcast CienIA-ficción">
+        </a>
+        <div class="podcast-body">
+          <span class="chip chip-primary" style="align-self: flex-start;">Spotify · Podcast</span>
+          <h2>CienIA-ficción</h2>
+          <p class="podcast-desc-clamped">
+            <span data-i18n="es">Bienvenidos a "CienIA-ficción", el podcast donde la inteligencia artificial da vida a relatos de ciencia ficción de diversos autores. Sumérgete en aventuras intergalácticas, futuros distópicos y tecnologías inimaginables. Cada episodio explora nuevas dimensiones mientras la IA narra historias que desafían la realidad.</span>
+            <span data-i18n="en">Welcome to "CienIA-ficción", the podcast where artificial intelligence brings science fiction stories from diverse authors to life. Dive into intergalactic adventures, dystopian futures, and unimaginable technologies.</span>
+            <span data-i18n="zh">欢迎来到《CienIA-ficción》，由人工智能生动演绎多位作家的科幻短篇。沉浸在星际冒险、反乌托邦未来和不可思议的科技想象之中。</span>
+          </p>
+          <div class="podcast-actions">
+            <a class="btn btn-filled btn-sm" href="https://creators.spotify.com/pod/show/jjas1" target="_blank" rel="noopener">
+              <span data-i18n="es">Escuchar en Spotify</span>
+              <span data-i18n="en">Listen on Spotify</span>
+              <span data-i18n="zh">在 Spotify 收听</span>
+            </a>
+            <button class="btn btn-outlined btn-sm" type="button" data-toggle-desc aria-expanded="false">
+              <span data-i18n="es">Leer más / menos</span>
+              <span data-i18n="en">Read more / less</span>
+              <span data-i18n="zh">展开 / 收起</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Jingling Koala -->
+      <article class="podcast-card">
+        <a href="https://soundcloud.com/josue-aguilar-jjas" target="_blank" rel="noopener" aria-label="Jingling Koala en SoundCloud">
+          <img class="podcast-cover" src="../assets/img/podcast-jk.jpg" alt="Portada de Jingling Koala">
+        </a>
+        <div class="podcast-body">
+          <span class="chip chip-tertiary" style="align-self: flex-start;">SoundCloud · Music</span>
+          <h2>Jingling Koala</h2>
+          <p class="podcast-desc-clamped">
+            <span data-i18n="es">Bienvenidos a "Jingling Koala", nuestro rincón encantado donde la tecnología se convierte en arte y la creatividad florece en melodías que acarician el alma. Sumérgete en un mundo de canciones únicas, forjadas con la chispa de la inteligencia artificial, cada una irradiando calidez y emociones puras.</span>
+            <span data-i18n="en">Welcome to "Jingling Koala", our enchanted corner where technology becomes art and creativity blooms into soulful melodies. Dive into unique songs forged with artificial intelligence, radiating warmth and pure emotion.</span>
+            <span data-i18n="zh">欢迎来到 “Jingling Koala”，在这里科技化为艺术，创意绽放成温暖人心的旋律。沉浸在由人工智能打造的独特音乐世界中。</span>
+          </p>
+          <div class="podcast-actions">
+            <a class="btn btn-tonal btn-sm" href="https://soundcloud.com/josue-aguilar-jjas" target="_blank" rel="noopener">
+              <span data-i18n="es">Escuchar en SoundCloud</span>
+              <span data-i18n="en">Listen on SoundCloud</span>
+              <span data-i18n="zh">在 SoundCloud 收听</span>
+            </a>
+            <button class="btn btn-outlined btn-sm" type="button" data-toggle-desc aria-expanded="false">
+              <span data-i18n="es">Leer más / menos</span>
+              <span data-i18n="en">Read more / less</span>
+              <span data-i18n="zh">展开 / 收起</span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Support Banner -->
+    <section class="banner-card">
+      <div>
+        <h2>
+          <span data-i18n="es">¿Te gustan estos proyectos?</span>
+          <span data-i18n="en">Enjoying these projects?</span>
+          <span data-i18n="zh">喜欢这些项目吗？</span>
+        </h2>
+        <p data-i18n="es">Si quieres apoyar la producción de nuevos episodios y herramientas abiertas de Ciencia Koala, puedes invitarme un café en PayPal.</p>
+        <p data-i18n="en">If you'd like to support new episodes and open Ciencia Koala projects, you can contribute via PayPal.</p>
+        <p data-i18n="zh">如果你想支持 Ciencia Koala 创作更多节目与开源工具，欢迎通过 PayPal 给予支持。</p>
+      </div>
+      <a class="btn btn-filled" href="https://paypal.me/cienIA?country.x=MX&locale.x=es_XC" target="_blank" rel="noopener">
+        <span data-i18n="es">Apoyar en PayPal →</span>
+        <span data-i18n="en">Support on PayPal →</span>
+        <span data-i18n="zh">通过 PayPal 支持 →</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Josué Jesús Aguilar Sánchez</strong> · Ciencia Koala © 2026
+      </div>
+      <div class="footer-links">
+        <a href="../">
+          <span data-i18n="es">Inicio</span>
+          <span data-i18n="en">Home</span>
+          <span data-i18n="zh">首页</span>
+        </a>
+        <a href="mailto:josue.aguilar.jjas@gmail.com">josue.aguilar.jjas@gmail.com</a>
+        <a href="https://github.com/JJAS-029" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/josu%C3%A9-jes%C3%BAs-aguilar-s%C3%A1nchez-geo/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

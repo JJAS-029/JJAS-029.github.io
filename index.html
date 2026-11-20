@@ -1,92 +1,420 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ciencia Koala · Apps</title>
-<meta name="description" content="Apps para Android de Ciencia Koala: Lab Pomodoro y ¿A cómo? · Android apps by Ciencia Koala.">
-<link rel="icon" href="favicon.png">
-<meta name="google-site-verification" content="lcFokOUQfvaaZZ9YzByooLf1L2oYpIY4CRU5PDK8ygM">
-<style>
-  :root { --bg: #f6f7f4; --fg: #1b1d1a; --muted: #565b54; --accent: #3f6b35; --card: #ffffff; --line: #e1e4dc; --chip: #e4eedd; --on-chip: #24401d; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #111311; --fg: #e3e5df; --muted: #aab0a6; --accent: #a9d39a; --card: #1b1e1a; --line: #2b2f29; --chip: #26331f; --on-chip: #c8e6bc; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
-  header { display: flex; justify-content: flex-end; }
-  .lang { background: none; border: 1px solid var(--muted); color: var(--fg); border-radius: 999px; padding: 4px 14px; font: inherit; cursor: pointer; }
-  .intro { text-align: center; padding: 24px 0 32px; }
-  .logo { font-size: 56px; line-height: 1; }
-  h1 { margin: 12px 0 4px; font-size: clamp(30px, 6vw, 42px); line-height: 1.15; }
-  .intro p { color: var(--muted); font-size: 18px; max-width: 520px; margin: 0 auto; }
-  .apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
-  .app { display: flex; flex-direction: column; gap: 12px; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px; color: inherit; text-decoration: none; transition: transform .15s, box-shadow .15s; }
-  .app:hover, .app:focus-visible { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0, 0, 0, .12); }
-  .app .top { display: flex; gap: 14px; align-items: center; }
-  .app img { width: 64px; height: 64px; border-radius: 16px; flex: none; }
-  .app h2 { font-size: 20px; margin: 0; line-height: 1.25; }
-  .chip { display: inline-block; font-size: 13px; font-weight: 600; background: var(--chip); color: var(--on-chip); border-radius: 999px; padding: 2px 10px; margin-top: 4px; }
-  .app p { margin: 0; color: var(--muted); }
-  .app .more { color: var(--accent); font-weight: 600; margin-top: auto; }
-  footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: 14px; }
-  footer a { color: var(--accent); }
-  html:not(.en) [lang="en"]:not(html), html.en [lang="es"]:not(html) { display: none; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Josué J.A.S. · Ciencia Koala</title>
+  <meta name="description" content="Portafolio personal de Josué Jesús Aguilar Sánchez y proyectos de Ciencia Koala: apps para Android (Lab Pomodoro, ¿A cómo?), geoinformática y podcasts con IA.">
+  <link rel="icon" href="favicon.png">
+  <!-- Verificación de Google Search Console / AdMob — NO eliminar -->
+  <meta name="google-site-verification" content="lcFokOUQfvaaZZ9YzByooLf1L2oYpIY4CRU5PDK8ygM">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js"></script>
 </head>
 <body>
-<main>
-  <header><button class="lang" id="lang" type="button">English</button></header>
+  <div class="topbar-wrap">
+    <header class="topbar">
+      <a class="brand" href="./">
+        <img src="assets/img/logo-koala.png" alt="">
+        <span>Ciencia Koala</span>
+      </a>
 
-  <div class="intro">
-    <div class="logo" aria-hidden="true">🐨</div>
-    <h1>Ciencia Koala</h1>
-    <p lang="es">Apps pequeñas y útiles para Android.</p>
-    <p lang="en">Small, useful apps for Android.</p>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a class="nav-link active" href="./">
+          <span data-i18n="es">Inicio</span>
+          <span data-i18n="en">Home</span>
+          <span data-i18n="zh">首页</span>
+        </a>
+        <a class="nav-link" href="#apps">
+          <span data-i18n="es">Apps</span>
+          <span data-i18n="en">Apps</span>
+          <span data-i18n="zh">应用</span>
+        </a>
+        <a class="nav-link" href="podcasts/">
+          <span data-i18n="es">Podcasts</span>
+          <span data-i18n="en">Podcasts</span>
+          <span data-i18n="zh">播客</span>
+        </a>
+        <a class="nav-link" href="cv/">
+          <span data-i18n="es">CV</span>
+          <span data-i18n="en">Resume</span>
+          <span data-i18n="zh">简历</span>
+        </a>
+      </nav>
+
+      <div class="controls">
+        <div class="lang-group" role="group" aria-label="Idioma">
+          <button class="lang-btn" type="button" data-set-lang="es" aria-pressed="true">ES</button>
+          <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" type="button" data-set-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <button class="theme-btn" id="theme-toggle" type="button" aria-label="Cambiar tema">🌙</button>
+      </div>
+    </header>
   </div>
 
-  <!-- Para agregar una app nueva: copiar un bloque <a class="app"> y crear su carpeta -->
-  <div class="apps">
-    <a class="app" href="lab-pomodoro/">
-      <div class="top">
-        <img src="lab-pomodoro/img/icon.png" alt="">
-        <div><h2>Lab Pomodoro</h2>
-          <span class="chip" lang="es">En Google Play</span><span class="chip" lang="en">On Google Play</span></div>
-      </div>
-      <p lang="es">Un timer Pomodoro donde tu tiempo de enfoque te da elementos de la tabla periódica.</p>
-      <p lang="en">A Pomodoro timer where your focus time earns elements of the periodic table.</p>
-      <span class="more"><span lang="es">Ver más →</span><span lang="en">Learn more →</span></span>
-    </a>
+  <main class="container">
+    <!-- Hero Bento -->
+    <section class="hero-bento">
+      <div class="surface-card hero-main">
+        <div>
+          <div class="chip-row" style="margin-bottom: 16px;">
+            <span class="chip chip-primary">
+              <span data-i18n="es">🐨 Ciencia Koala · Portafolio</span>
+              <span data-i18n="en">🐨 Ciencia Koala · Portfolio</span>
+              <span data-i18n="zh">🐨 Ciencia Koala · 个人作品集</span>
+            </span>
+          </div>
 
-    <a class="app" href="acomo/">
-      <div class="top">
-        <img src="acomo/icon.png" alt="">
-        <div><h2>¿A cómo? Precios de mercado</h2>
-          <span class="chip" lang="es">Muy pronto</span><span class="chip" lang="en">Coming soon</span></div>
-      </div>
-      <p lang="es">Compara lo que te cobran en el mercado o tianguis con los precios oficiales de mayoreo de México.</p>
-      <p lang="en">Compare what you pay at the market with Mexico's official wholesale prices (Spanish only).</p>
-      <span class="more"><span lang="es">Ver más →</span><span lang="en">Learn more →</span></span>
-    </a>
-  </div>
+          <h1 class="display-title">
+            <span data-i18n="es">Hola, soy Josué.<br>Geoinformática, apps y ciencia abierta.</span>
+            <span data-i18n="en">Hi, I'm Josué.<br>Geoinformatics, apps &amp; open science.</span>
+            <span data-i18n="zh">你好，我是 Josué。<br>地理信息、移动应用与科普创作。</span>
+          </h1>
 
-  <footer>
-    <p><a href="mailto:ciencia.koala@gmail.com"><span lang="es">Contacto</span><span lang="en">Contact</span></a></p>
-    <p>© 2026 Ciencia Koala</p>
+          <p data-i18n="es">
+            Soy <strong>Josué Jesús Aguilar Sánchez</strong>, <strong>Lead GIS Developer &amp; Jefe de Estadística</strong>, especializado en geoinformática, automatización cartográfica con Python/PostGIS y análisis de datos masivos.
+            Bajo <strong>Ciencia Koala</strong> también creo apps para Android y proyectos de divulgación y audio con IA.
+          </p>
+          <p data-i18n="en">
+            I'm <strong>Josué Jesús Aguilar Sánchez</strong>, a <strong>Lead GIS Developer &amp; Head of Statistics</strong> specializing in geoinformatics, Python/PostGIS cartographic automation, and spatial data engineering.
+            Under <strong>Ciencia Koala</strong>, I also build Android apps and AI-powered science podcasts.
+          </p>
+          <p data-i18n="zh">
+            我是 <strong>Josué Jesús Aguilar Sánchez</strong>，担任<strong>首席 GIS 开发者与统计负责人</strong>，专注于地理信息科学、Python/PostGIS 制图自动化与空间数据工程。
+            在 <strong>Ciencia Koala</strong> 品牌下，我也开发 Android 应用与 AI 科普播客。
+          </p>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn btn-filled" href="cv/">
+            <span data-i18n="es">Ver mi CV completo →</span>
+            <span data-i18n="en">View full resume →</span>
+            <span data-i18n="zh">查看完整简历 →</span>
+          </a>
+          <a class="btn btn-tonal" href="#apps">
+            <span data-i18n="es">Explorar proyectos</span>
+            <span data-i18n="en">Explore projects</span>
+            <span data-i18n="zh">浏览项目</span>
+          </a>
+          <a class="btn btn-outlined" href="https://github.com/JJAS-029" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-outlined" href="https://www.linkedin.com/in/josu%C3%A9-jes%C3%BAs-aguilar-s%C3%A1nchez-geo/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <aside class="surface-card hero-side">
+        <div class="avatar-frame">
+          <img src="assets/img/profile.jpg" alt="Josué Jesús Aguilar Sánchez">
+        </div>
+        <div class="hero-side-content">
+          <div class="hero-side-meta">
+            <strong>Josué J. Aguilar Sánchez</strong>
+            <span data-i18n="es">Toluca, México · Lead GIS Developer</span>
+            <span data-i18n="en">Toluca, Mexico · Lead GIS Developer</span>
+            <span data-i18n="zh">墨西哥托卢卡 · 首席 GIS 开发者</span>
+          </div>
+          <div class="chip-row" style="justify-content: center;">
+            <span class="chip chip-surface">Python / PostGIS</span>
+            <span class="chip chip-surface">GIS / ETL</span>
+            <span class="chip chip-surface">Android</span>
+            <span class="chip chip-surface">IA Audio</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Apps Android (Ciencia Koala) -->
+    <section id="apps">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">
+            <span data-i18n="es">📱 Ciencia Koala</span>
+            <span data-i18n="en">📱 Ciencia Koala</span>
+            <span data-i18n="zh">📱 Ciencia Koala</span>
+          </div>
+          <h2 class="section-title">
+            <span data-i18n="es">Apps para Android</span>
+            <span data-i18n="en">Android Apps</span>
+            <span data-i18n="zh">Android 应用</span>
+          </h2>
+        </div>
+        <p class="muted" style="margin: 0;">
+          <span data-i18n="es">Herramientas pequeñas, cuidadas y pensadas para el día a día.</span>
+          <span data-i18n="en">Small, thoughtful tools built for everyday use.</span>
+          <span data-i18n="zh">小巧、精致、面向日常使用的实用工具。</span>
+        </p>
+      </div>
+
+      <!-- Para agregar una app nueva: copiar un bloque <a class="project-card"> y crear su carpeta -->
+      <div class="grid-2">
+        <a class="project-card" href="lab-pomodoro/">
+          <div class="app-head">
+            <img class="app-icon" src="lab-pomodoro/img/icon.png" alt="Lab Pomodoro">
+            <div>
+              <h3>Lab Pomodoro</h3>
+              <span class="chip chip-primary" style="margin-top: 6px;">
+                <span data-i18n="es">En Google Play</span>
+                <span data-i18n="en">On Google Play</span>
+                <span data-i18n="zh">已在 Google Play 上架</span>
+              </span>
+            </div>
+          </div>
+          <p data-i18n="es">Un timer Pomodoro donde tu tiempo de enfoque te da elementos de la tabla periódica, salas con amigos y soporte para Wear OS.</p>
+          <p data-i18n="en">A Pomodoro timer where your focus time earns elements of the periodic table, with study rooms and Wear OS support.</p>
+          <p data-i18n="zh">一款番茄钟应用：你的专注时间可以解锁元素周期表中的化学元素，支持好友自习室与 Wear OS 手表。</p>
+          <span class="card-action">
+            <span data-i18n="es">Ver app →</span>
+            <span data-i18n="en">Learn more →</span>
+            <span data-i18n="zh">了解详情 →</span>
+          </span>
+        </a>
+
+        <a class="project-card" href="acomo/">
+          <div class="app-head">
+            <img class="app-icon" src="acomo/icon.png" alt="¿A cómo?">
+            <div>
+              <h3>¿A cómo? Precios de mercado</h3>
+              <span class="chip chip-tertiary" style="margin-top: 6px;">
+                <span data-i18n="es">Muy pronto</span>
+                <span data-i18n="en">Coming soon</span>
+                <span data-i18n="zh">即将推出</span>
+              </span>
+            </div>
+          </div>
+          <p data-i18n="es">Compara lo que te cobran en el mercado o tianguis con los precios oficiales de mayoreo de México y encuentra gasolina barata cerca de ti.</p>
+          <p data-i18n="en">Compare market prices against Mexico's official wholesale data and find affordable fuel nearby (Spanish only).</p>
+          <p data-i18n="zh">将墨西哥农贸市场价格与官方批发数据进行对比，并查找附近的低价加油站（仅限西班牙语）。</p>
+          <span class="card-action">
+            <span data-i18n="es">Ver app →</span>
+            <span data-i18n="en">Learn more →</span>
+            <span data-i18n="zh">了解详情 →</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Código Abierto / Proyectos Públicos en GitHub -->
+    <section id="opensource">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">
+            <span data-i18n="es">💻 GitHub Público</span>
+            <span data-i18n="en">💻 Public GitHub</span>
+            <span data-i18n="zh">💻 GitHub 开源项目</span>
+          </div>
+          <h2 class="section-title">
+            <span data-i18n="es">Herramientas y Código Abierto</span>
+            <span data-i18n="en">Open-Source &amp; Tools</span>
+            <span data-i18n="zh">开源工具与代码</span>
+          </h2>
+        </div>
+        <a class="btn btn-tonal btn-sm" href="https://github.com/JJAS-029?tab=repositories" target="_blank" rel="noopener">
+          <span data-i18n="es">Ver GitHub →</span>
+          <span data-i18n="en">View GitHub →</span>
+          <span data-i18n="zh">访问 GitHub →</span>
+        </a>
+      </div>
+
+      <div class="grid-3">
+        <a class="project-card" href="https://github.com/JJAS-029/monitor_cel" target="_blank" rel="noopener">
+          <span class="chip chip-primary" style="align-self: flex-start;">Node.js · Material 3 Expressive</span>
+          <h3>Koala Desk Monitor</h3>
+          <p data-i18n="es">Panel de escritorio para celular Android con tu Koala científico: cuotas de IA en vivo (Antigravity y Claude Code), monitor de PC/GPU NVIDIA, control multimedia, clima y Pomodoro.</p>
+          <p data-i18n="en">Standalone Android desk dashboard featuring the Scientific Koala: live AI quotas (Antigravity &amp; Claude Code), PC/NVIDIA GPU monitor, Windows media deck, weather, and Pomodoro.</p>
+          <p data-i18n="zh">Android 横屏桌面监控面板（Material 3 Expressive）：实时追踪 Antigravity 与 Claude Code 额度、PC/NVIDIA GPU 监控、媒体控制、天气与番茄钟。</p>
+          <span class="card-action">GitHub ↗</span>
+        </a>
+
+        <a class="project-card" href="https://github.com/JJAS-029/tools" target="_blank" rel="noopener">
+          <span class="chip chip-primary" style="align-self: flex-start;">HarmonyOS · Kotlin · Compose</span>
+          <h3>JJAS Tools (Watch Fit 3)</h3>
+          <p data-i18n="es">Suite M3 Expressive para Huawei Watch Fit 3 y Android: Metro CDMX sin internet, cámara remota, Spotify, Now Brief, Bici Kit con seguridad SMS y Koala Tamagotchi.</p>
+          <p data-i18n="en">M3 Expressive suite for Huawei Watch Fit 3 &amp; Android companion app: offline CDMX Metro, remote camera, Spotify control, Now Brief, Bike Kit with SMS safety, and Koala Tamagotchi.</p>
+          <p data-i18n="zh">面向华为 Watch Fit 3 与 Android 伴侣应用的 M3 Expressive 工具套件：离线墨西哥城地铁、远程相机、Spotify 控制、骑行安全短信与考拉电子宠物。</p>
+          <span class="card-action">GitHub ↗</span>
+        </a>
+
+        <a class="project-card" href="https://github.com/JJAS-029/koala_monitor" target="_blank" rel="noopener">
+          <span class="chip chip-primary" style="align-self: flex-start;">VS Code · JavaScript</span>
+          <h3>Koala Monitor</h3>
+          <p data-i18n="es">Extensión de VS Code con monitor de uso de Claude Code (API Anthropic), temporizador Pomodoro, Git, sistema y clima.</p>
+          <p data-i18n="en">VS Code extension featuring Claude Code usage tracking (Anthropic API), Pomodoro timer, Git, system monitor, and weather.</p>
+          <p data-i18n="zh">VS Code 扩展：监控 Claude Code 用量（Anthropic API）、番茄钟、Git 状态、系统监控与天气。</p>
+          <span class="card-action">GitHub ↗</span>
+        </a>
+
+        <a class="project-card" href="https://github.com/JJAS-029/subtitulos_wav" target="_blank" rel="noopener">
+          <span class="chip chip-tertiary" style="align-self: flex-start;">Python · WhisperX</span>
+          <h3>Subtítulos WAV</h3>
+          <p data-i18n="es">Transcripción local automática con WhisperX y diarización de hablantes con pyannote para generar archivos .srt.</p>
+          <p data-i18n="en">Local automated transcription with WhisperX and speaker diarization with pyannote to generate .srt subtitles.</p>
+          <p data-i18n="zh">基于 WhisperX 与 pyannote 的本地语音转录与说话人分离工具，自动生成 .srt 字幕。</p>
+          <span class="card-action">GitHub ↗</span>
+        </a>
+
+        <a class="project-card" href="https://github.com/JJAS-029/Atlas_espacial" target="_blank" rel="noopener">
+          <span class="chip" style="align-self: flex-start;">Web GIS · HTML</span>
+          <h3>Atlas Espacial</h3>
+          <p data-i18n="es">Atlas web interactivo que mapea instalaciones de investigación espacial alrededor del mundo.</p>
+          <p data-i18n="en">Interactive web atlas mapping space research facilities around the world.</p>
+          <p data-i18n="zh">展示全球航天研究设施的互动 Web 地图集。</p>
+          <span class="card-action">GitHub ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Podcasts y Audio (Koal-IA) -->
+    <section id="podcasts">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">
+            <span data-i18n="es">🎙️ Koal-IA</span>
+            <span data-i18n="en">🎙️ Koal-IA</span>
+            <span data-i18n="zh">🎙️ Koal-IA</span>
+          </div>
+          <h2 class="section-title">
+            <span data-i18n="es">Podcasts y Audio con IA</span>
+            <span data-i18n="en">AI Podcasts &amp; Audio</span>
+            <span data-i18n="zh">AI 播客与音乐项目</span>
+          </h2>
+        </div>
+        <a class="btn btn-tonal btn-sm" href="podcasts/">
+          <span data-i18n="es">Ver todos los detalles →</span>
+          <span data-i18n="en">See full details →</span>
+          <span data-i18n="zh">查看全部详情 →</span>
+        </a>
+      </div>
+
+      <div class="grid-3">
+        <article class="podcast-card">
+          <img class="podcast-cover" src="assets/img/podcast-ciencia.jpg" alt="CiencIA">
+          <div class="podcast-body">
+            <span class="chip chip-primary" style="align-self: flex-start;">Spotify</span>
+            <h3>CiencIA</h3>
+            <p data-i18n="es">Documentos científicos y tesis narrados con inteligencia artificial para acercar el conocimiento a todos.</p>
+            <p data-i18n="en">Scientific papers and theses narrated with AI to make research accessible and engaging for everyone.</p>
+            <p data-i18n="zh">利用人工智能朗读科学论文与学位论文，让学术知识变得通俗易懂、触手可及。</p>
+            <div class="podcast-actions">
+              <a class="btn btn-filled btn-sm" href="https://creators.spotify.com/pod/show/jjas" target="_blank" rel="noopener">
+                <span data-i18n="es">Escuchar</span>
+                <span data-i18n="en">Listen</span>
+                <span data-i18n="zh">收听</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="podcast-card">
+          <img class="podcast-cover" src="assets/img/podcast-ficcion.jpg" alt="CienIA-ficción">
+          <div class="podcast-body">
+            <span class="chip chip-primary" style="align-self: flex-start;">Spotify</span>
+            <h3>CienIA-ficción</h3>
+            <p data-i18n="es">Relatos de ciencia ficción de distintos autores narrados con IA: futuros distópicos y viajes intergalácticos.</p>
+            <p data-i18n="en">Sci-fi stories from diverse authors brought to life by AI: dystopian futures and intergalactic adventures.</p>
+            <p data-i18n="zh">由人工智能演绎的多位作家科幻故事：星际探险、未来世界与奇幻想象。</p>
+            <div class="podcast-actions">
+              <a class="btn btn-filled btn-sm" href="https://creators.spotify.com/pod/show/jjas1" target="_blank" rel="noopener">
+                <span data-i18n="es">Escuchar</span>
+                <span data-i18n="en">Listen</span>
+                <span data-i18n="zh">收听</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="podcast-card">
+          <img class="podcast-cover" src="assets/img/podcast-jk.jpg" alt="Jingling Koala">
+          <div class="podcast-body">
+            <span class="chip chip-tertiary" style="align-self: flex-start;">SoundCloud</span>
+            <h3>Jingling Koala</h3>
+            <p data-i18n="es">Rincón musical donde la tecnología se convierte en arte: melodías originales creadas con inteligencia artificial.</p>
+            <p data-i18n="en">A musical corner where technology meets art: original melodies crafted with artificial intelligence.</p>
+            <p data-i18n="zh">科技与艺术交汇的音乐角落：由人工智能创作的温暖原创旋律。</p>
+            <div class="podcast-actions">
+              <a class="btn btn-tonal btn-sm" href="https://soundcloud.com/josue-aguilar-jjas" target="_blank" rel="noopener">
+                <span data-i18n="es">Escuchar</span>
+                <span data-i18n="en">Listen</span>
+                <span data-i18n="zh">收听</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Perfil y Stack -->
+    <section class="section-header" style="margin-bottom: 18px;">
+      <div>
+        <div class="section-eyebrow">
+          <span data-i18n="es">🧭 Trayectoria</span>
+          <span data-i18n="en">🧭 Background</span>
+          <span data-i18n="zh">🧭 个人背景</span>
+        </div>
+        <h2 class="section-title">
+          <span data-i18n="es">Sobre mí y habilidades</span>
+          <span data-i18n="en">About me &amp; skills</span>
+          <span data-i18n="zh">关于我与核心技能</span>
+        </h2>
+      </div>
+    </section>
+
+    <section class="surface-tonal">
+      <div class="grid-2" style="align-items: center;">
+        <div>
+          <p style="margin-top: 0;" data-i18n="es">
+            Licenciado en <strong>Geoinformática (UAEMex)</strong> y Especialista en <strong>Cartografía Automatizada, Teledetección y SIG (2024–2025)</strong>. Con experiencia en seguridad pública y banca, diseño pipelines ETL, visores tácticos y apps móviles que convierten datos complejos en herramientas útiles.
+          </p>
+          <p style="margin-top: 0;" data-i18n="en">
+            <strong>B.S. in Geoinformatics (UAEMex)</strong> and Specialist in <strong>Automated Cartography, Remote Sensing &amp; GIS (2024–2025)</strong>. Experienced in public safety and banking, I build ETL pipelines, tactical GIS viewers, and mobile apps that turn complex data into practical tools.
+          </p>
+          <p style="margin-top: 0;" data-i18n="zh">
+            墨西哥州自治大学（UAEMex）<strong>地理信息学学士</strong>及<strong>自动化制图、遥感与 GIS 专科（2024–2025）</strong>。拥有公共安全与银行业经验，专注于构建 ETL 流水线、战术级 GIS 可视化平台与移动应用。
+          </p>
+          <div class="btn-row" style="margin-top: 18px;">
+            <a class="btn btn-filled" href="cv/">
+              <span data-i18n="es">Abrir currículum →</span>
+              <span data-i18n="en">Open resume →</span>
+              <span data-i18n="zh">打开简历 →</span>
+            </a>
+            <a class="btn btn-outlined" href="mailto:josue.aguilar.jjas@gmail.com">
+              <span data-i18n="es">Escribir correo</span>
+              <span data-i18n="en">Send email</span>
+              <span data-i18n="zh">发送邮件</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="chip-row">
+          <span class="chip chip-primary">PostgreSQL / PostGIS</span>
+          <span class="chip chip-primary">QGIS / ArcGIS Pro</span>
+          <span class="chip chip-primary">Leaflet / MapLibre</span>
+          <span class="chip chip-primary">GeoServer (WFS)</span>
+          <span class="chip">Python / GeoPandas</span>
+          <span class="chip">SQL / PL/pgSQL</span>
+          <span class="chip">Django / Electron</span>
+          <span class="chip">Streamlit / Playwright</span>
+          <span class="chip">Kotlin / Android</span>
+          <span class="chip chip-tertiary">OpenAI &amp; Anthropic APIs</span>
+          <span class="chip chip-tertiary">WhisperX / NLP</span>
+          <span class="chip chip-tertiary">VS Code Extensions</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>Josué Jesús Aguilar Sánchez</strong> · Ciencia Koala © 2026
+      </div>
+      <div class="footer-links">
+        <a href="mailto:josue.aguilar.jjas@gmail.com">josue.aguilar.jjas@gmail.com</a>
+        <a href="mailto:ciencia.koala@gmail.com">ciencia.koala@gmail.com</a>
+        <a href="https://github.com/JJAS-029" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/josu%C3%A9-jes%C3%BAs-aguilar-s%C3%A1nchez-geo/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/josue_j_aguilar_s/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
   </footer>
-</main>
-<script>
-  // Muestra el idioma del navegador; el botón cambia entre español e inglés
-  const root = document.documentElement;
-  const button = document.getElementById('lang');
-  function show(english) {
-    root.classList.toggle('en', english);
-    root.lang = english ? 'en' : 'es';
-    button.textContent = english ? 'Español' : 'English';
-  }
-  show(!(navigator.language || 'es').toLowerCase().startsWith('es'));
-  button.addEventListener('click', () => show(!root.classList.contains('en')));
-</script>
 </body>
 </html>
